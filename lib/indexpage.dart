@@ -21,100 +21,101 @@ class _IndexPageState extends State<IndexPage> {
           title: Text('Create Business Card'),
           centerTitle: true,
           actions: [IconButton(icon: Icon(Icons.list), onPressed: null)],
+          backgroundColor: Colors.teal,
         ),
         body: SafeArea(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: ListView(
+          scrollDirection: Axis.vertical,
+          addAutomaticKeepAlives: false,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: AssetImage('images/po.jpg'),
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Name',
+                    hintText: 'Enter name',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      name = txt;
+                    });
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Position',
+                    hintText: 'Enter position',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      position = txt;
+                    });
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Phone Number',
+                    hintText: 'Enter phone number',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      phonenumber = txt;
+                    });
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'E-mail',
+                    hintText: 'Enter email',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      email = txt;
+                    });
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Work address',
+                    hintText: 'Enter work address',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      work = txt;
+                    });
+                  },
+                ),
+                TextField(
+                  decoration: const InputDecoration(
+                    labelText: 'Home Address',
+                    hintText: 'Enter home address',
+                  ),
+                  maxLines: 2,
+                  onChanged: (String txt) {
+                    setState(() {
+                      home = txt;
+                    });
+                  },
+                ),
+                SizedBox(
+                    height: 20.0,
+                    width: 250.0,
+                    child: Divider(color: Colors.teal)),
+              ],
+            ),
             Padding(
-                padding: EdgeInsets.symmetric(vertical: 100.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    CircleAvatar(
-                      radius: 50.0,
-                      backgroundImage: AssetImage('images/po.jpg'),
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'name',
-                        hintText: 'Enter name',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          name = txt;
-                        });
-                      },
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'position',
-                        hintText: 'Enter position',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          position = txt;
-                        });
-                      },
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'phone number',
-                        hintText: 'Enter phone number',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          phonenumber = txt;
-                        });
-                      },
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'email',
-                        hintText: 'Enter email',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          email = txt;
-                        });
-                      },
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'work address',
-                        hintText: 'Enter work address',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          work = txt;
-                        });
-                      },
-                    ),
-                    TextField(
-                      decoration: const InputDecoration(
-                        labelText: 'home address',
-                        hintText: 'Enter home address',
-                      ),
-                      maxLines: 2,
-                      onChanged: (String txt) {
-                        setState(() {
-                          home = txt;
-                        });
-                      },
-                    ),
-                    SizedBox(
-                        height: 20.0,
-                        width: 250.0,
-                        child: Divider(color: Colors.white)),
-                  ],
-                )),
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
@@ -133,9 +134,7 @@ class _IndexPageState extends State<IndexPage> {
         )));
   }
 
-  void _generateCard() {
-    return Scaffold(
-      body: 
-    )
+  Scaffold _generateCard() {
+    return Scaffold(body: Container());
   }
 }

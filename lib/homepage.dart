@@ -13,14 +13,14 @@ class Details {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.teal,
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 100.0),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -102,20 +102,22 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ],
-                )),
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    FloatingActionButton(
-                      onPressed: _share,
-                      child: Icon(Icons.share),
-                      backgroundColor: Colors.teal,
-                    ),
-                  ],
-                ))
-          ],
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      FloatingActionButton(
+                        onPressed: _share,
+                        child: Icon(Icons.share),
+                        backgroundColor: Colors.teal,
+                      ),
+                    ],
+                  ))
+            ],
+          ),
         ),
       ),
     );
