@@ -13,27 +13,20 @@ class Details {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.teal,
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage('images/po.jpg'),
-                  ),
-                  Text(
-                    Details().name,
-                    style: TextStyle(
-                      fontFamily: 'BalsamiqSans',
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 50.0,
+                      backgroundImage: AssetImage('images/po.jpg'),
                     ),
                   ),
                   Text(
@@ -100,23 +93,23 @@ class HomePage extends StatelessWidget {
                               fontFamily: 'JosefinSans',
                               fontSize: 20.0)),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    FloatingActionButton(
-                      onPressed: _share,
-                      child: Icon(Icons.share),
-                      backgroundColor: Colors.teal,
-                    ),
                   ],
-                ))
-          ],
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      FloatingActionButton(
+                        onPressed: _share,
+                        child: Icon(Icons.share),
+                        backgroundColor: Colors.teal,
+                      ),
+                    ],
+                  ))
+            ],
+          ),
         ),
       ),
     );
