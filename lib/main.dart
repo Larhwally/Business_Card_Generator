@@ -1,5 +1,6 @@
 import 'package:business_card/homepage.dart';
 import 'package:flutter/material.dart';
+import 'indexpage.dart';
 // import 'package:wc_flutter_share/wc_flutter_share.dart';
 
 void main() {
@@ -9,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
+    return MaterialApp(home: IndexPage());
   }
 }
 
