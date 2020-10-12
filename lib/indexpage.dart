@@ -1,3 +1,4 @@
+import 'package:business_card/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -6,25 +7,22 @@ class IndexPage extends StatefulWidget {
   _IndexPageState createState() => _IndexPageState();
 }
 
- class MyData {
-    String name;
-    String position;
-    String email;
-    String phonenumber;
-    String work;
-    String home;
+class MyData {
+  String name;
+  String position;
+  String email;
+  String phonenumber;
+  String work;
+  String home;
 
-    MyData(this.name, this.email, this.home, this.phonenumber, this.work, this.position);
-
-  }
-
-  
+  MyData(this.name, this.email, this.home, this.phonenumber, this.work,
+      this.position);
+}
 
 class _IndexPageState extends State<IndexPage> {
+  MyData myData;
 
- final MyData myData;
-
-  _IndexPageState(this.myData);
+  //_IndexPageState(this.myData);
 
   @override
   Widget build(BuildContext context) {
@@ -129,28 +127,30 @@ class _IndexPageState extends State<IndexPage> {
               ],
             ),
             Padding(
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Builder(builder: (BuildContext context) {
-                      return FlatButton(
-                          child: const Text('Generate'),
-                          onPressed: myData.name.isEmpty
-                              ? null
-                              : () {
-                                  _generateCard();
-                                });
-                    })
-                  ],
-                ),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Builder(builder: (BuildContext context) {
+                    return FlatButton(
+                        child: const Text('Generate'),
+                        onPressed: myData.name.isEmpty
+                            ? null
+                            : () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomePage()));
+                              });
+                  })
+                ],
               ),
-            )
+            ),
           ],
         )));
   }
 
-  Scaffold _generateCard() {
-    return Scaffold(body: Container());
-  }
+  // Scaffold _generateCard() {
+  //   return Scaffold(body: Container());
+  // }
 }

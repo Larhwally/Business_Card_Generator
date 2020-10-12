@@ -28,70 +28,78 @@ class HomePage extends StatelessWidget {
                       radius: 50.0,
                       backgroundImage: AssetImage('images/po.jpg'),
                     ),
-                  ),
-                  Text(
-                    Details().position,
-                    style: TextStyle(
-                        fontFamily: 'JosefinSans',
-                        color: Colors.white,
+                    Text(
+                      Details().name,
+                      style: TextStyle(
+                        fontFamily: 'BalsamiqSans',
+                        fontSize: 40.0,
                         fontWeight: FontWeight.bold,
-                        letterSpacing: 2.5),
-                  ),
-                  SizedBox(
-                      height: 20.0,
-                      width: 250.0,
-                      child: Divider(color: Colors.white)),
-                  Card(
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.phone,
-                        color: Colors.teal,
+                        color: Colors.white,
                       ),
-                      title: Text(Details().phone,
-                          style: TextStyle(
-                              fontSize: 20.0,
-                              fontFamily: 'JosefinSans',
-                              color: Colors.teal.shade900)),
                     ),
-                  ),
-                  Card(
+                    Text(
+                      Details().position,
+                      style: TextStyle(
+                          fontFamily: 'JosefinSans',
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2.5),
+                    ),
+                    SizedBox(
+                        height: 20.0,
+                        width: 250.0,
+                        child: Divider(color: Colors.white)),
+                    Card(
+                        margin: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.phone,
+                            color: Colors.teal,
+                          ),
+                          title: Text(Details().phone,
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontFamily: 'JosefinSans',
+                                  color: Colors.teal.shade900)),
+                        )),
+                    Card(
+                        margin: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        //padding: EdgeInsets.all(10.0),
+                        child: ListTile(
+                          leading: Icon(Icons.email, color: Colors.teal),
+                          title: Text(
+                            Details().email,
+                            style: TextStyle(
+                                color: Colors.teal.shade900,
+                                fontFamily: 'JosefinSans',
+                                fontSize: 20.0),
+                          ),
+                        )),
+                    Card(
                       margin: EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
-                      //padding: EdgeInsets.all(10.0),
                       child: ListTile(
-                        leading: Icon(Icons.email, color: Colors.teal),
-                        title: Text(
-                          Details().email,
-                          style: TextStyle(
-                              color: Colors.teal.shade900,
-                              fontFamily: 'JosefinSans',
-                              fontSize: 20.0),
-                        ),
-                      )),
-                  Card(
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    child: ListTile(
-                      leading: Icon(Icons.work, color: Colors.teal),
-                      title: Text(Details().work,
-                          style: TextStyle(
-                              color: Colors.teal.shade900,
-                              fontFamily: 'JosefinSans',
-                              fontSize: 20.0)),
+                        leading: Icon(Icons.work, color: Colors.teal),
+                        title: Text(Details().work,
+                            style: TextStyle(
+                                color: Colors.teal.shade900,
+                                fontFamily: 'JosefinSans',
+                                fontSize: 20.0)),
+                      ),
                     ),
-                  ),
-                  Card(
-                    margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    child: ListTile(
-                      leading: Icon(Icons.location_on, color: Colors.teal),
-                      title: Text(Details().home,
-                          style: TextStyle(
-                              color: Colors.teal.shade900,
-                              fontFamily: 'JosefinSans',
-                              fontSize: 20.0)),
+                    Card(
+                      margin: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      child: ListTile(
+                        leading: Icon(Icons.location_on, color: Colors.teal),
+                        title: Text(Details().home,
+                            style: TextStyle(
+                                color: Colors.teal.shade900,
+                                fontFamily: 'JosefinSans',
+                                fontSize: 20.0)),
+                      ),
                     ),
                   ],
                 ),
