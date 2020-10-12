@@ -6,13 +6,25 @@ class IndexPage extends StatefulWidget {
   _IndexPageState createState() => _IndexPageState();
 }
 
+ class MyData {
+    String name;
+    String position;
+    String email;
+    String phonenumber;
+    String work;
+    String home;
+
+    MyData(this.name, this.email, this.home, this.phonenumber, this.work, this.position);
+
+  }
+
+  
+
 class _IndexPageState extends State<IndexPage> {
-  String name = "",
-      position = "",
-      phonenumber = "",
-      email = "",
-      work = "",
-      home = "";
+
+ final MyData myData;
+
+  _IndexPageState(this.myData);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +58,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      name = txt;
+                      myData.name = txt;
                     });
                   },
                 ),
@@ -58,7 +70,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      position = txt;
+                      myData.position = txt;
                     });
                   },
                 ),
@@ -70,7 +82,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      phonenumber = txt;
+                      myData.phonenumber = txt;
                     });
                   },
                 ),
@@ -82,7 +94,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      email = txt;
+                      myData.email = txt;
                     });
                   },
                 ),
@@ -94,7 +106,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      work = txt;
+                      myData.work = txt;
                     });
                   },
                 ),
@@ -106,7 +118,7 @@ class _IndexPageState extends State<IndexPage> {
                   maxLines: 2,
                   onChanged: (String txt) {
                     setState(() {
-                      home = txt;
+                      myData.home = txt;
                     });
                   },
                 ),
@@ -124,7 +136,7 @@ class _IndexPageState extends State<IndexPage> {
                     Builder(builder: (BuildContext context) {
                       return FlatButton(
                           child: const Text('Generate'),
-                          onPressed: name.isEmpty
+                          onPressed: myData.name.isEmpty
                               ? null
                               : () {
                                   _generateCard();
